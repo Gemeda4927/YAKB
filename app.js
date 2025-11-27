@@ -4,12 +4,11 @@ require('dotenv').config();
 
 const app = express();
 
-// Middleware
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Basic route for health check
 app.get('/', (req, res) => {
   res.json({
     message: 'Welcome to Express API Server',
@@ -18,7 +17,7 @@ app.get('/', (req, res) => {
   });
 });
 
-// Handle 404 - Not Found (FIXED VERSION)
+
 app.use((req, res) => {
   res.status(404).json({
     success: false,
